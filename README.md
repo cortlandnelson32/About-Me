@@ -18,7 +18,7 @@ Beyond software development, I have a strong interest in:
 - **Monitoring & Reliability:** Logging, incident response, root cause analysis  
 
 ## 🌐 Live Site
-🔗 **Portfolio:** *(Link will be added once deployed via Vercel)*
+🔗 **Portfolio:** https://cortland-nelson.vercel.app/
 
 ## 📄 Resume
 A downloadable PDF version of my resume is available directly on the site for quick access.
