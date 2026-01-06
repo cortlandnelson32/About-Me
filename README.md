@@ -6,8 +6,9 @@ Welcome to my personal portfolio and resume website. This site serves as a centr
 I am a Full Stack Developer and Operations Specialist with hands-on experience in cloud platforms, DevOps workflows, and data engineering. I enjoy solving complex problems by breaking them down into scalable, reliable, and well-documented solutions.
 
 Beyond software development, I have a strong interest in:
-- NYSE market analysis and technical pattern recognition
 - Computer hardware, systems troubleshooting, and performance optimization
+- NYSE market analysis and technical pattern recognition
+- Self-taught chef of many cuisines
 
 ## 🛠️ Technical Skill Highlights
 - **Programming & Scripting:** Python, JavaScript, SQL  
