@@ -28,7 +28,7 @@
             line-height: 1.6;
         }
 
-        /* Header Styles */
+        /* header */
         #header {
             position: fixed;
             left: 0;
@@ -89,7 +89,7 @@
             color: var(--primary-color);
         }
 
-        /* Main Content */
+        /* main */
         #main {
             margin-left: 35%;
             padding: 4rem 4rem 2rem;
@@ -118,7 +118,7 @@
             background: var(--primary-color);
         }
 
-        /* About Section */
+        /* about */
         .about-text {
             font-size: 1.05rem;
             line-height: 1.8;
@@ -144,7 +144,7 @@
             box-shadow: 0 4px 12px rgba(73, 191, 157, 0.3);
         }
 
-        /* Skills Section */
+        /* skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -178,7 +178,7 @@
             font-weight: 500;
         }
 
-        /* Projects Section */
+        /* projects */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -233,7 +233,7 @@
             text-decoration: underline;
         }
 
-        /* Food Gallery */
+        /* food */
         .food-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -260,7 +260,6 @@
             transform: scale(1.1);
         }
 
-        /* Responsive Design */
         @media screen and (max-width: 980px) {
             #header {
                 position: relative;
@@ -293,7 +292,6 @@
             }
         }
 
-        /* Loading Animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -385,7 +383,6 @@
 							<span>AWS</span>
 						</div>
 
-						<!-- High-impact additions -->
 						<div class="skill-item">
 							<i class="fab fa-microsoft"></i>
 							<span>Microsoft Azure</span>
@@ -477,7 +474,7 @@
     </main>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scrolling 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -488,7 +485,7 @@
             });
         });
 
-        // Add intersection observer for fade-in animations
+        // fade-in
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
