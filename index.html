@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cortland Nelson - Full Stack Developer Portfolio">
+    <title>Cortland Nelson - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #49bf9d;
+            --dark-bg: #1f1815;
+            --text-light: #a2a2a2;
+            --text-dark: #787878;
+            --white: #ffffff;
+            --border-color: #efefef;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        #header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 35%;
+            height: 100vh;
+            background: linear-gradient(rgba(31, 24, 21, 0.9), rgba(31, 24, 21, 0.9)), 
+                        url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800') center/cover;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            display: block;
+        }
+
+        #header h1 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        #header .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        #main {
+            margin-left: 35%;
+            padding: 4rem 4rem 2rem;
+            max-width: 1200px;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(73, 191, 157, 0.3);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f7f7f7;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Food Gallery */
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .food-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            aspect-ratio: 1;
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .food-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 980px) {
+            #header {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 3rem 2rem;
+            }
+
+            #main {
+                margin-left: 0;
+                padding: 3rem 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .food-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="profile-section">
+            <img src="images/cortland.enhanced.jpg" alt="Cortland Nelson" class="avatar">
+            <h1>Cortland Nelson</h1>
+            <p class="subtitle">Full Stack Developer<br>Crafting seamless digital solutions</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/cortlandnelson32" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/cortland-nelson/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:cortland.nelson2018@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                Driven by a curious mind and a knack for tackling complex challenges, I excel at breaking down 
+                intricate problems into actionable steps. Whether I'm optimizing software to streamline operations, 
+                analyzing NYSE market trends to identify strategic opportunities, or troubleshooting hardware to 
+                enhance system performance, I thrive on finding innovative solutions that deliver tangible results.
+            </p>
+            <p class="about-text">
+                My journey blends technical expertise, strategic insight, and an insatiable drive to learn and grow. 
+                When I'm not coding, you can find me in the kitchen or on the grill creating culinary masterpieces!
+            </p>
+            <a href="images/CortlandNelson.pdf" class="btn" target="_blank" rel="noopener noreferrer"> View Resume </a>
+        </section>
+
+        <section id="skills">
+					<h2>Technical Skills</h2>
+
+					<div class="skills-grid">
+						<div class="skill-item">
+							<i class="fab fa-python"></i>
+							<span>Python</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fab fa-js"></i>
+							<span>JavaScript</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fab fa-react"></i>
+							<span>React</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fab fa-node"></i>
+							<span>Node.js</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fas fa-database"></i>
+							<span>SQL</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fab fa-git-alt"></i>
+							<span>Git</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fab fa-docker"></i>
+							<span>Docker</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fab fa-aws"></i>
+							<span>AWS</span>
+						</div>
+
+						<!-- High-impact additions -->
+						<div class="skill-item">
+							<i class="fab fa-microsoft"></i>
+							<span>Microsoft Azure</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fas fa-code-branch"></i>
+							<span>CI/CD Pipelines</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fas fa-cubes"></i>
+							<span>Terraform (IaC)</span>
+						</div>
+
+						<div class="skill-item">
+							<i class="fas fa-server"></i>
+							<span>Data Engineering (Snowflake)</span>
+						</div>
+				</section>
+
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/Beach Breakaway.png" alt="Beach Breakaway" class="project-image">
+                    <div class="project-content">
+                        <h3>Beach Breakaway</h3>
+                        <p>A beach-themed Airbnb clone featuring property listings, booking management, and user authentication. Built with React and Express.</p>
+                        <a href="https://beach-breakaway.onrender.com" target="_blank" class="project-link">
+                            View Project <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/StartUp Screenshot.png" alt="StartUp" class="project-image">
+                    <div class="project-content">
+                        <h3>StartUp</h3>
+                        <p>A Kickstarter-inspired platform helping users gain funding for their creative projects. Features project creation, backing system, and progress tracking.</p>
+                        <a href="https://startup-1po2.onrender.com/" target="_blank" class="project-link">
+                            View Project <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400&h=250&fit=crop" alt="SoundStats" class="project-image">
+                    <div class="project-content">
+                        <h3>SoundStats</h3>
+                        <p>A comprehensive music data management application for tracking and analyzing listening habits. Coming soon!</p>
+                        <a href="https://soundstats.onrender.com" target="_blank" class="project-link">
+                            View Project <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="https://github.com/cortlandnelson32" target="_blank" class="btn">View Full Portfolio on GitHub</a>
+            </div>
+        </section>
+
+        <section id="culinary">
+            <h2>Culinary Creations</h2>
+            <p class="about-text">When I'm not coding, I love experimenting in the kitchen. Here are some of my favorite dishes:</p>
+            <div class="food-gallery">
+                <div class="food-item">
+                    <img src="images/thanksgiving.jpg" alt="Thanksgiving Feast">
+                </div>
+                <div class="food-item">
+                    <img src="images/crabcakes.jpeg" alt="Crab Cakes">
+                </div>
+                <div class="food-item">
+                    <img src="images/alfredo.jpeg" alt="Pasta">
+                </div>
+                <div class="food-item">
+                    <img src="images/steak_done.jpeg" alt="Steak">
+                </div>
+                <div class="food-item">
+                    <img src="images/vodka.jpeg" alt="Gourmet Dish">
+                </div>
+                <div class="food-item">
+                    <img src="images/breakfast.jpeg" alt="Breakfast">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
